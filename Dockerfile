@@ -1,5 +1,6 @@
 FROM caddy:2.7.2-builder AS builder
-RUN xcaddy build 2.7.2 \
+export CADDY_VERSION=v2.7.2
+RUN xcaddy build \
   --with github.com/caddy-dns/cloudflare \
   --with github.com/aksdb/caddy-cgi/v2
 
